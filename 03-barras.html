@@ -53,15 +53,15 @@
     
     var chart = d3.select(".panel-body").append("svg");
     chart.attr("width",700).
-    attr("height",700);
+    attr("height",400);
 chart.selectAll("texto").data(poblacion).enter().append("text").
 attr("x",240).
-attr("y",function(d,i){return (i+1)*15;}).attr("align","right").attr("text-anchor","end").html(function(d,i){return d.provincia;});
+attr("y",function(d,i){return (i+1)*15;}).attr("align","right").attr("text-anchor","end").attr("alignment-baseline","central").html(function(d,i){return d.provincia;});
  
    chart.selectAll("rect").data(poblacion).enter().append("rect").
    attr("x",250).attr("y",function(d,i){return (i+1)*15;}).
 attr("width",function(d,i){return (d.poblacion)/80000;}).
-attr("height",5).attr("fill","blue");    //chart.append("rect").attr("width",100).attr("height",80).attr("fill","blue");
+attr("height",10).attr("fill","blue");    //chart.append("rect").attr("width",100).attr("height",80).attr("fill","blue");
 /*chart.selectAll("li").data(poblacion).enter().append("li")
   .html(  
     function(d,i) { 
